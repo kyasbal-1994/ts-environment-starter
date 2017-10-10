@@ -1,10 +1,12 @@
 {
-  "name": "texture-chainer",
+  "name": "ts-environment-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "precommit": "npm run lint:fix",
+    "start": "ts-node ./fusebox.ts --watch --hotModuleLoading --devServer",
+    "watch:client": "ts-node ./fusebox.ts --watch",
     "build:client": "ts-node ./fusebox.ts",
     "lint:fix": "tslint --project ./tsconfig.client.json --type-check --fix",
     "lint": "tslint --project ./tsconfig.client.json ./ --type-check"
@@ -13,15 +15,24 @@
   "license": "MIT",
   "dependencies": {
     "@types/react": "^16.0.10",
+    "@types/react-dom": "^16.0.1",
+    "@types/react-redux": "^5.0.10",
     "@types/redux": "^3.6.0",
     "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
     "redux": "^3.7.2"
   },
   "devDependencies": {
+    "@types/yargs": "^8.0.2",
     "fuse-box": "^2.3.3",
     "husky": "^0.14.3",
+    "opn": "^5.1.0",
+    "postcss-modules": "^1.0.0",
+    "stylus": "^0.54.5",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
-    "typescript": "^2.5.3"
+    "typescript": "^2.5.3",
+    "yargs": "^9.0.1"
   }
 }

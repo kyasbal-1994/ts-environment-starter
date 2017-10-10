@@ -124,5 +124,5 @@ $RECYCLE.BIN/
 ################### Specific ignore files on this repository #####################
 ##################################################################################
 
-dist
+public/dist
 .fusebox
