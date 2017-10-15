@@ -14,5 +14,5 @@ class WrappedApp extends React.Component {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    ReactDOM.render(<WrappedApp />, document.body);
+    ReactDOM.render(<WrappedApp />, document.getElementById("app"));
 });

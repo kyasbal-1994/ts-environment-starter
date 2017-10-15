@@ -1,8 +1,22 @@
 import * as React from "react";
-import styl from "./test.styl";
-console.log(styl);
+import { ChromePicker, SwatchesPicker } from "react-color";
+import { Saturation } from "react-color/lib/components/common";
+import { Grid } from "react-flexbox-grid";
+import Slider from "./components/controls/Slider";
+import style from "./app.styl";
+import ButtonBelt from "./components/ButtonBelt";
+import Button from "./components/controls/Button";
+import ColorPicker from "./components/controls/ColorPicker";
+import Instruction from "./components/controls/Instruction";
 export default class App extends React.Component {
     public render() {
-        return (<div><p className={styl.hello}>Hello</p></div>);
+        const buttons = ["前", "次"];
+        return (
+            <div className={style.appLayout}>
+                <ButtonBelt type="nextprev" prevDisabled={false} />
+                <ColorPicker />
+                <Instruction />
+                <Slider />
+            </div>);
     }
 }
