@@ -10,7 +10,7 @@ export default class ButtonBelt extends React.Component<IButtonBeltProps> {
                 <div className={style.buttonBeltContainer}>
                     <Row center="xs">
                         <Col>
-                            <Button iconSrc="./dance.svg" type="next" disabled={false} />
+                            <Button iconSrc="./dance.svg" type="next" disabled={false} onClick={this.onNextClick.bind(this)} />
                         </Col>
                     </Row>
                 </div>
@@ -20,14 +20,22 @@ export default class ButtonBelt extends React.Component<IButtonBeltProps> {
                 <div className={style.buttonBeltContainer}>
                     <Row>
                         <Col xs={3}>
-                            <Button iconSrc="./prev.svg" type="prev" disabled={this.props.prevDisabled} />
+                            <Button iconSrc="./prev.svg" type="prev" disabled={this.props.prevDisabled} onClick={this.onPrevClick.bind(this)} />
                         </Col>
                         <Col xsOffset={6} xs={3}>
-                            <Button iconSrc="./next.svg" type="next" disabled={false} />
+                            <Button iconSrc="./next.svg" type="next" disabled={false} onClick={this.onNextClick.bind(this)} />
                         </Col>
                     </Row>
                 </div>
             );
         }
+    }
+
+    private onNextClick(): void {
+        this.props.onNextClick();
+    }
+
+    private onPrevClick(): void {
+        this.props.onPrevClick();
     }
 }

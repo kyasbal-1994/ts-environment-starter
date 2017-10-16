@@ -5,7 +5,7 @@ export default class TemporaryEventWatcher {
 
     public static watch(target: HTMLElement | Document, actionEvent: string, endEvent: string, eventWorker: (e: Event) => void, endEventWorker: (e: Event) => void): void {
         target.addEventListener(actionEvent, eventWorker);
-        const endEventRegistree = (e) => {
+        const endEventRegistree = (e: any) => {
             endEventWorker(e);
             target.removeEventListener(actionEvent, eventWorker);
             target.removeEventListener(endEvent, endEventWorker);
